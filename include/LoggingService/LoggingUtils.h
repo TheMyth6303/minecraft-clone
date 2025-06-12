@@ -1,9 +1,9 @@
 #ifndef LOGGER_UTILS_H
 #define LOGGER_UTILS_H
 
-#include <string>
+#include "LoggingService/LogType.h"
 
-enum LogType { LOG_INFO = 0, LOG_WARN = 1, LOG_ERRR = 2 };
+#include <string>
 
 std::string getDateTime();
 std::string getLogSource(const char *filePath, int line);

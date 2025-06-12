@@ -1,7 +1,7 @@
 #ifndef LOGGER_H
 #define LOGGER_H
 
-#include "LoggingService/LoggingUtils.h"
+#include "LoggingService/LogType.h"
 
 class Logger {
 private:
