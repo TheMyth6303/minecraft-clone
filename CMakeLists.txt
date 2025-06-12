@@ -7,5 +7,12 @@ project(MinecraftClone)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Add the executable
-add_executable(${PROJECT_NAME} src/main.cpp)
+# include directories for dependencies
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+# build executable
+file(GLOB SOURCES 
+    "src/*.cpp" 
+    "src/LoggingService/*.cpp"
+)
+add_executable(${PROJECT_NAME} ${SOURCES})
