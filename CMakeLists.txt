@@ -16,9 +16,14 @@ file(GLOB SOURCES
     "src/*.cpp" 
     "src/LoggingService/*.cpp"
     "src/WindowService/*.cpp"
+    "src/RenderService/*.cpp"
 )
 add_executable(${PROJECT_NAME} ${SOURCES})
 
+# define GLEW_STATIC for static linking
+add_definitions(-DGLEW_STATIC)
+
 # link libraries
 target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/dependencies/lib/libglfw3.a")
+target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/dependencies/lib/libglew32.a")
 target_link_libraries(${PROJECT_NAME} "opengl32")

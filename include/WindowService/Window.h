@@ -18,6 +18,7 @@ public:
   void swapBuffers();
   void pollEvents();
   void destroy();
+  void makeCurrentRenderingContext();
   ~Window();
 };
 

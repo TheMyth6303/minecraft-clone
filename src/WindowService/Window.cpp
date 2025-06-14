@@ -33,7 +33,9 @@ void Window::setClearColor(float r, float g, float b, float a) {
 };
 
 void Window::clear() {
-  glfwMakeContextCurrent(window);
+  if (glfwGetCurrentContext() != window) {
+    glfwMakeContextCurrent(window);
+  }
   glClear(GL_COLOR_BUFFER_BIT);
 };
 
@@ -45,5 +47,11 @@ void Window::destroy() {
   glfwTerminate();
   Log(logger, "window destroyed.", LOG_INFO);
 };
+
+void Window::makeCurrentRenderingContext() {
+  if (glfwGetCurrentContext() != window) {
+    glfwMakeContextCurrent(window);
+  }
+}
 
 Window::~Window() {};
