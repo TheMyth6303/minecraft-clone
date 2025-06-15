@@ -70,6 +70,15 @@ void Renderer::destroyShader(ShaderId shader) {
   ShaderManager::destroyShader(shader);
 };
 
+void Renderer::setTexture(ShaderId shader, const char *textureName,
+                          const char *texturePath) {
+  ShaderManager::setTexture(shader, textureName, texturePath);
+}
+
+void Renderer::setUniform1f(ShaderId shader, const char *uniformName, float f) {
+  ShaderManager::setUniform1f(shader, uniformName, f);
+}
+
 void Renderer::setUniform4f(ShaderId shader, const char *uniformName, //
                             float f1, float f2, float f3, float f4) {
   ShaderManager::setUniform4f(shader, uniformName, f1, f2, f3, f4);

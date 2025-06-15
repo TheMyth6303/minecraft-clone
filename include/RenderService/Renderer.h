@@ -38,6 +38,10 @@ public:
                         const char *fragmentShaderPath);
   void destroyShader(ShaderId shader);
 
+  void setTexture(ShaderId shader, const char *textureName,
+                  const char *texturePath);
+
+  void setUniform1f(ShaderId shader, const char *uniformName, float f);
   void setUniform4f(ShaderId shader, const char *uniformName, //
                     float f1, float f2, float f3, float f4);
 
