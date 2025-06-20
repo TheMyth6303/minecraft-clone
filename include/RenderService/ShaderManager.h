@@ -3,6 +3,7 @@
 
 #include "RenderService/TextureManager.h"
 
+#include <GLM/glm.hpp>
 #include <cstdint>
 #include <string>
 #include <unordered_map>
@@ -43,6 +44,8 @@ public:
   static void setUniform1f(ShaderId shader, const char *uniformName, float f);
   static void setUniform4f(ShaderId shader, const char *uniformName, //
                            float f1, float f2, float f3, float f4);
+  static void setUniformMat4f(ShaderId shader, const char *uniformName,
+                              glm::mat4 &mat4f);
 
   static void destroyShader(ShaderId shader);
   static void destroyAllShaders();

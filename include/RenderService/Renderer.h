@@ -3,6 +3,7 @@
 
 #include "LoggingService/Logger.h"
 
+#include <GLM/glm.hpp>
 #include <cstdint>
 #include <string>
 
@@ -44,6 +45,8 @@ public:
   void setUniform1f(ShaderId shader, const char *uniformName, float f);
   void setUniform4f(ShaderId shader, const char *uniformName, //
                     float f1, float f2, float f3, float f4);
+  void setUniformMat4f(ShaderId shader, const char *uniformName,
+                       glm::mat4 &matrix);
 
   void draw(MeshId mesh, ShaderId shader);
 };

@@ -21,6 +21,8 @@ file(GLOB SOURCES
     "src/LoggingService/*.cpp"
     "src/WindowService/*.cpp"
     "src/RenderService/*.cpp"
+    "src/WorldManager/*.cpp"
+    "src/WorldManager/VoxelWorld/*.cpp"
 )
 add_executable(${PROJECT_NAME} ${SOURCES})
 

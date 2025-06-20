@@ -25,6 +25,7 @@ bool Renderer::initialize() {
   glEnable(GL_CULL_FACE);
   glCullFace(GL_BACK);
   glFrontFace(GL_CCW);
+  glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
   Log(logger, "renderer initialized successfully.", LOG_INFO);
   return true;
 };
@@ -82,6 +83,11 @@ void Renderer::setUniform1f(ShaderId shader, const char *uniformName, float f) {
 void Renderer::setUniform4f(ShaderId shader, const char *uniformName, //
                             float f1, float f2, float f3, float f4) {
   ShaderManager::setUniform4f(shader, uniformName, f1, f2, f3, f4);
+}
+
+void Renderer::setUniformMat4f(ShaderId shader, const char *uniformName, //
+                               glm::mat4 &matrix) {
+  ShaderManager::setUniformMat4f(shader, uniformName, matrix);
 }
 
 void Renderer::draw(MeshId mesh, ShaderId shader) {

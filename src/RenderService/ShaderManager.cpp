@@ -1,6 +1,7 @@
 #include "RenderService/ShaderManager.h"
 
 #include <GLEW/glew.h>
+#include <GLM/glm.hpp>
 #include <fstream>
 #include <sstream>
 
@@ -128,6 +129,13 @@ void ShaderManager::setUniform4f(ShaderId shader, const char *uniformName, //
                                  float f1, float f2, float f3, float f4) {
   glUseProgram(shader);
   glUniform4f(getUniformLocation(shader, uniformName), f1, f2, f3, f4);
+}
+
+void ShaderManager::setUniformMat4f(ShaderId shader, const char *uniformName,
+                                    glm::mat4 &mat4f) {
+  glUseProgram(shader);
+  glUniformMatrix4fv(getUniformLocation(shader, uniformName), 1, GL_FALSE,
+                     &mat4f[0][0]);
 }
 
 void ShaderManager::destroyShader(ShaderId shader) {
